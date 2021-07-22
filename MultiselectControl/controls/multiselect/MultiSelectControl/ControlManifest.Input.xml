@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="MultiSelectPCFControl" constructor="MultiSelectPCFControl" version="1.0.1" display-name-key="MultiSelectPCFControl" description-key="MultiSelectPCFControl description"  control-type="standard">
+    <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
+    <type-group name="textareas">
+        <type>SingleLine.Text</type>
+        <type>SingleLine.TextArea</type>
+        <type>Multiple</type>
+      </type-group>
+    <property name="field" display-name-key="Field" description-key="Field to be populated with the selected values" of-type-group="textareas" usage="bound" required="true" />
+    <property name="labelDescription" display-name-key="Label description" description-key="Label to add above the field" of-type="SingleLine.Text" usage="input" required="false" />
+    <property name="entityName" display-name-key="Entity Name" description-key="Name of the entity from which you want to return results" of-type="SingleLine.Text" usage="input" required="true" />
+    <property name="filterField" display-name-key="FilterField" description-key="The field to do the filter on" of-type="SingleLine.TextArea" usage="input" required="true" />
+    <property name="topCount" display-name-key="TopCount" description-key="Number of items to return (Above 50 not recommended)" of-type="SingleLine.Text" usage="input" required="true" />
+    <property name="columns" display-name-key="Columns" description-key="Columns to be retrieved" of-type="SingleLine.Text" usage="input" required="true" />
+    <property name="displayFieldLabel" display-name-key="labelField" description-key="Field shown in the select picker" of-type="SingleLine.Text" usage="input" required="true" />
+    <property name="displayValueField" display-name-key="ValueField" description-key="The value to select when Item is selected" of-type="SingleLine.Text" usage="input" required="true" />
+    <resources>
+      <code path="index.ts" order="1"/>
+      <css path="css/MultiselectControl.css" order="1" />
+    </resources>    
+    <feature-usage>
+      <uses-feature name="WebAPI" required="true" />
+    </feature-usage>
+  </control>
+</manifest>
